@@ -4,7 +4,7 @@ Lua color highlighter for World of Warcraft API for Sublime Text 3.
 ![](https://i.imgur.com/GCGpwwC.png)
 
 # Features:
-* Color highlighing for every color related API methods.
+* Color highlighting for every color related API methods.
 * Convert colors to different formats, RGB > RGBA > R255G255B255 > R255G255B255A
 * Pick colors with colorpicker, pick colors by a color of a pixel on your screen.
 
