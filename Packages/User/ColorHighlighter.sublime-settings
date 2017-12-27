@@ -136,13 +136,13 @@
 			},
 			"wowsetlightstartrgb":
 			{
-				"description": "SetLight() color format",
+				"description": "SetLight(enabled, omni, dirX, dirY, dirZ, ambIntensity, 0.0-1.0, 0.0-1.0, 0.0-1.0, dirIntensity, 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
 				"regex": ":\\s*(SetLight)\\s*\\(\\s*(\\w*)\\s*[,]\\s*(\\w*)\\s*[,]\\s*((?P<DX>float)|\\w*)\\s*[,]\\s*((?P<DY>float)|\\w*)\\s*[,]\\s*((?P<DZ>float)|\\w*)\\s*[,]\\s*((?P<AI>float)|\\w*)\\s*[,]\\s*((?P<R>float)\\s*[,]\\s*(?P<G>float)\\s*[,]\\s*(?P<B>float)\\s*)[,]\\s*(?P<AI>float)\\s*[,]\\s*",
 				"white": "(1.0, 1.0, 1.0)"
 			},
 			"wowsetlightstartrgb255":
 			{
-				"description": "SetLight() color format",
+				"description": "SetLight(enabled, omni, dirX, dirY, dirZ, ambIntensity, 255/255, 255/255, 255/255, dirIntensity, 255/255, 255/255, 255/255) color format",
 				"regex": ":\\s*(SetLight)\\s*\\(\\s*(\\w*)\\s*[,]\\s*(\\w*)\\s*[,]\\s*((?P<DX>float)|\\w*)\\s*[,]\\s*((?P<DY>float)|\\w*)\\s*[,]\\s*((?P<DZ>float)|\\w*)\\s*[,]\\s*((?P<AI>float)|\\w*)\\s*[,]\\s*((?P<R1>num)\\s*/\\s*(?P<R2>num)\\s*[,]\\s*(?P<G1>num)\\s*/\\s*(?P<G2>num)\\s*[,]\\s*(?P<B1>num)\\s*/\\s*(?P<B2>num)\\s*)[,]\\s*(?P<AI>float)\\s*[,]\\s*",
 				"white": "(255/255, 255/255, 255/255)"
 			}
