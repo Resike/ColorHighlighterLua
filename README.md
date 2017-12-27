@@ -10,6 +10,10 @@ Lua color highlighter for World of Warcraft API for Sublime Text 3.
 
 https://www.youtube.com/watch?v=5rpsGn-L960
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=watch?v=5rpsGn-L960
+" target="_blank"><img src="http://img.youtube.com/vi/watch?v=5rpsGn-L960/0.jpg" 
+alt="Sublime Text WoWLua ColorHighlighter" width="240" height="180" border="10" /></a>
+
 # Installation:
 * Install the original [Color Highlighter](https://packagecontrol.io/packages/Color%20Highlighter) package.
 * Close Sublime Text.
