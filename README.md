@@ -11,7 +11,7 @@ Lua color highlighter for World of Warcraft API for Sublime Text 3.
 * Global highlighter and liter tool with SublimeLinter.
 
 # Installation:
-* Install the original ![Color Highlighter](https://packagecontrol.io/packages/Color%20Highlighter) package.
+* Install the original [Color Highlighter](https://packagecontrol.io/packages/Color%20Highlighter) package.
 * Close Sublime Text.
 * Download this package, and copy the included folders, (Installed Packages|Lib|Packages) into your Sublime Text roaming folder: "c:\Users\<UserName>\AppData\Roaming\Sublime Text 3"
 * And you're done. Optionally you can edit the settings for the highlighting in the Tools > ColorHighliter options.
