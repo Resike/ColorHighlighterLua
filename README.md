@@ -13,7 +13,7 @@ https://www.youtube.com/watch?v=5rpsGn-L960
 # Installation:
 * Install the original [Color Highlighter](https://packagecontrol.io/packages/Color%20Highlighter) package.
 * Close Sublime Text.
-* Download this package, and copy the included folders, (Installed Packages, Lib, Packages) into your Sublime Text roaming folder: *"c:\Users\<UserName>\AppData\Roaming\Sublime Text 3"*
+* Download this package, and copy the included folders with the modified files, (Installed Packages, Lib, Packages) into your Sublime Text roaming folder: *"c:\Users\<UserName>\AppData\Roaming\Sublime Text 3"*
 * And you're done. Optionally you can edit the settings for the highlighting in the *Tools > ColorHighliter* options.
 
 
