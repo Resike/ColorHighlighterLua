@@ -1,0 +1,223 @@
+{
+	"experimental":
+	{
+		"asynchronosly_update_color_scheme": false
+	},
+	"file_extensions":
+	[
+		".lua"
+	],
+	"regex_compiler":
+	{
+		"channels":
+		{
+			"dec": "\\d{1,3}",
+			"float": "(?:[0|1])|(?:[1][\\.]?[0]*)|(?:[0]?[\\.]\\d*)",
+			"hex": "[0-9a-fA-F]",
+			"num": "\\d*",
+			"perc": "(?:\\d{1,3}[%])|(?:0)",
+			"string": "\\w*"
+		},
+		"formats":
+		{
+			"sharpc8":
+			{
+				"description": "Hex |cRRGGBBAA color format",
+				"regex": "\\|c[0-9a-fA-F]{8}",
+				"white": "|cFFFFFFFF"
+			},
+			"wowendrgb":
+			{
+				"description": "SetGradient(\"orientation\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": "(?P<R2>float)\\s*[,]\\s*(?P<G2>float)\\s*[,]\\s*(?P<B2>float)\\s*\\)",
+				"white": "(1.0, 1.0, 1.0)"
+			},
+			"wowendrgb255":
+			{
+				"description": "SetGradient(\"orientation\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": "(?P<R3>num)\\s*/\\s*(?P<R4>num)\\s*[,]\\s*(?P<G3>num)\\s*/\\s*(?P<G4>num)\\s*[,]\\s*(?P<B3>num)\\s*/\\s*(?P<B4>num)\\s*\\)",
+				"white": "(255/255, 255/255, 255/255)"
+			},
+			"wowgradientendrgba":
+			{
+				"description": "SetGradientAlpha(\"orientation\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": "(?P<R2>float)\\s*[,]\\s*(?P<G2>float)\\s*[,]\\s*(?P<B2>float)\\s*[,]\\s*(?P<A2>float)\\s*\\)",
+				"white": "(1.0, 1.0, 1.0)"
+			},
+			"wowgradientendrgba255":
+			{
+				"description": "SetGradientAlpha(\"orientation\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": "(?P<R3>num)\\s*/\\s*(?P<R4>num)\\s*[,]\\s*(?P<G3>num)\\s*/\\s*(?P<G4>num)\\s*[,]\\s*(?P<B3>num)\\s*/\\s*(?P<B4>num)\\s*[,]\\s*(?P<A>float)\\s*\\)",
+				"white": "(255/255, 255/255, 255/255)"
+			},
+			"wowgradientstartrgb":
+			{
+				"description": "SetGradient(\"orientation\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": ":\\s*(SetGradient)\\s*\\((\\s*((\")?\\w*(\")?)\\s*[,]\\s*(?P<R>float)\\s*[,]\\s*(?P<G>float)\\s*[,]\\s*(?P<B>float)\\s*[,])",
+				"white": "(1.0, 1.0, 1.0)"
+			},
+			"wowgradientstartrgb255":
+			{
+				"description": "SetGradient(\"orientation\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": ":\\s*(SetGradient)\\s*\\((\\s*((\")?\\w*(\")?)\\s*[,]\\s*(?P<R1>num)\\s*/\\s*(?P<R2>num)\\s*[,]\\s*(?P<G1>num)\\s*/\\s*(?P<G2>num)\\s*[,]\\s*(?P<B1>num)\\s*/\\s*(?P<B2>num)\\s*[,])",
+				"white": "(255/255, 255/255, 255/255)"
+			},
+			"wowgradientstartrgba":
+			{
+				"description": "SetGradientAlpha(\"orientation\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": ":\\s*(SetGradientAlpha)\\s*\\((\\s*((\")?\\w*(\")?)\\s*[,]\\s*(?P<R>float)\\s*[,]\\s*(?P<G>float)\\s*[,]\\s*(?P<B>float)\\s*[,]\\s*(?P<A>float)\\s*[,])",
+				"white": "(1.0, 1.0, 1.0)"
+			},
+			"wowgradientstartrgba255":
+			{
+				"description": "SetGradientAlpha(\"orientation\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": ":\\s*(SetGradientAlpha)\\s*\\((\\s*((\")?\\w*(\")?)\\s*[,]\\s*(?P<R1>num)\\s*/\\s*(?P<R2>num)\\s*[,]\\s*(?P<G1>num)\\s*/\\s*(?P<G2>num)\\s*[,]\\s*(?P<B1>num)\\s*/\\s*(?P<B2>num)\\s*[,]\\s*(?P<A>float)\\s*[,])",
+				"white": "(255/255, 255/255, 255/255)"
+			},
+			"wowhsv":
+			{
+				"description": "SetColorHSV(0-360, 0.0-1.0, 0.0-1.0) color format",
+				"regex": ":\\s*SetColorHSV\\s*\\(\\s*(?P<H>dec)\\s*[,]\\s*(?P<S>float)\\s*[,]\\s*(?P<V>float)\\s*\\)",
+				"white": "SetColorHSV(0, 0.0, 1.0)"
+			},
+			"wowhsv255":
+			{
+				"description": "SetColorHSV(0-360, 255/255, 255/255) color format",
+				"regex": ":\\s*SetColorHSV\\s*\\(\\s*(?P<H>dec)\\s*[,]\\s*(?P<S1>num)\\s*/\\s*(?P<S2>num)\\s*[,]\\s*(?P<V1>num)\\s*/\\s*(?P<V2>num)\\s*\\)",
+				"white": "SetColorHSV(0, 255/255, 255/255)"
+			},
+			"wowrgb":
+			{
+				"description": "(0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": ":\\s*(SetColorRGB|SetBackdropBorderColor|SetBackdropColor|SetColorTexture|SetFogColor|SetShadowColor|SetStatusBarColor|SetSwipeColor|SetSwipeColor|SetTextColor|SetVertexColor)\\s*\\((\\s*(?P<R>float)\\s*[,]\\s*(?P<G>float)\\s*[,]\\s*(?P<B>float)\\s*)\\)",
+				"white": "(1.0, 1.0, 1.0)"
+			},
+			"wowrgb255":
+			{
+				"description": "(255/255, 255/255, 255/255) color format",
+				"regex": ":\\s*(SetColorRGB|SetBackdropBorderColor|SetBackdropColor|SetColorTexture|SetFogColor|SetShadowColor|SetStatusBarColor|SetSwipeColor|SetSwipeColor|SetTextColor|SetVertexColor)\\s*\\(\\s*((?P<R1>num)\\s*/\\s*(?P<R2>num)\\s*[,]\\s*(?P<G1>num)\\s*/\\s*(?P<G2>num)\\s*[,]\\s*(?P<B1>num)\\s*/\\s*(?P<B2>num)\\s*)\\)",
+				"white": "(255/255, 255/255, 255/255)"
+			},
+			"wowrgba":
+			{
+				"description": "(0.0-1.0, 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": ":\\s*(SetColorRGB|SetBackdropBorderColor|SetBackdropColor|SetColorTexture|SetFogColor|SetShadowColor|SetStatusBarColor|SetSwipeColor|SetSwipeColor|SetTextColor|SetVertexColor)\\s*\\(\\s*((?P<R>float)\\s*[,]\\s*(?P<G>float)\\s*[,]\\s*(?P<B>float)\\s*[,]\\s*(?P<A>float)\\s*)\\)",
+				"white": "(1.0, 1.0, 1.0, 1.0)"
+			},
+			"wowrgba255":
+			{
+				"description": "(255/255, 255/255, 255/255, 1.0) color format",
+				"regex": ":\\s*(SetColorRGB|SetBackdropBorderColor|SetBackdropColor|SetColorTexture|SetFogColor|SetShadowColor|SetStatusBarColor|SetSwipeColor|SetSwipeColor|SetTextColor|SetVertexColor)\\s*\\(\\s*((?P<R1>num)\\s*/\\s*(?P<R2>num)\\s*[,]\\s*(?P<G1>num)\\s*/\\s*(?P<G2>num)\\s*[,]\\s*(?P<B1>num)\\s*/\\s*(?P<B2>num)\\s*[,]\\s*(?P<A>float)\\s*)\\)",
+				"white": "(255/255, 255/255, 255/255, 1.0)"
+			},
+			"wowsetlightrgb":
+			{
+				"description": "SetLight(enabled, omni, dirX, dirY, dirZ, ambIntensity, 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": ":\\s*(SetLight)\\s*\\(\\s*(\\w*)\\s*[,]\\s*(\\w*)\\s*[,]\\s*((?P<DX>float)|\\w*)\\s*[,]\\s*((?P<DY>float)|\\w*)\\s*[,]\\s*((?P<DZ>float)|\\w*)\\s*[,]\\s*((?P<AI>float)|\\w*)\\s*[,]\\s*((?P<R>float)\\s*[,]\\s*(?P<G>float)\\s*[,]\\s*(?P<B>float))\\s*\\)",
+				"white": "(1.0, 1.0, 1.0)"
+			},
+			"wowsetlightrgb255":
+			{
+				"description": "SetLight(enabled, omni, dirX, dirY, dirZ, ambIntensity, 255/255, 255/255, 255/255) color format",
+				"regex": ":\\s*(SetLight)\\s*\\(\\s*(\\w*)\\s*[,]\\s*(\\w*)\\s*[,]\\s*((?P<DX>float)|\\w*)\\s*[,]\\s*((?P<DY>float)|\\w*)\\s*[,]\\s*((?P<DZ>float)|\\w*)\\s*[,]\\s*((?P<AI>float)|\\w*)\\s*[,]\\s*((?P<R1>num)\\s*/\\s*(?P<R2>num)\\s*[,]\\s*(?P<G1>num)\\s*/\\s*(?P<G2>num)\\s*[,]\\s*(?P<B1>num)\\s*/\\s*(?P<B2>num))\\s*\\)",
+				"white": "(255/255, 255/255, 255/255)"
+			},
+			"wowsetlightrgbd":
+			{
+				"description": "SetLight(enabled, omni, dirX, dirY, dirZ, ambIntensity, 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": ":\\s*(SetLight)\\s*\\(\\s*(\\w*)\\s*[,]\\s*(\\w*)\\s*[,]\\s*((?P<DX>float)|\\w*)\\s*[,]\\s*((?P<DY>float)|\\w*)\\s*[,]\\s*((?P<DZ>float)|\\w*)\\s*[,]\\s*((?P<AI>float)|\\w*)\\s*[,]\\s*((?P<R>float)\\s*[,]\\s*(?P<G>float)\\s*[,]\\s*(?P<B>float)\\s*)[,]\\s*(?P<AI>float)\\s*\\)",
+				"white": "(1.0, 1.0, 1.0)"
+			},
+			"wowsetlightrgbd255":
+			{
+				"description": "SetLight(enabled, omni, dirX, dirY, dirZ, ambIntensity, 255/255, 255/255, 255/255) color format",
+				"regex": ":\\s*(SetLight)\\s*\\(\\s*(\\w*)\\s*[,]\\s*(\\w*)\\s*[,]\\s*((?P<DX>float)|\\w*)\\s*[,]\\s*((?P<DY>float)|\\w*)\\s*[,]\\s*((?P<DZ>float)|\\w*)\\s*[,]\\s*((?P<AI>float)|\\w*)\\s*[,]\\s*((?P<R1>num)\\s*/\\s*(?P<R2>num)\\s*[,]\\s*(?P<G1>num)\\s*/\\s*(?P<G2>num)\\s*[,]\\s*(?P<B1>num)\\s*/\\s*(?P<B2>num)\\s*)[,]\\s*(?P<AI>float)\\s*\\)",
+				"white": "(255/255, 255/255, 255/255)"
+			},
+			"wowsetlightstartrgb":
+			{
+				"description": "SetLight() color format",
+				"regex": ":\\s*(SetLight)\\s*\\(\\s*(\\w*)\\s*[,]\\s*(\\w*)\\s*[,]\\s*((?P<DX>float)|\\w*)\\s*[,]\\s*((?P<DY>float)|\\w*)\\s*[,]\\s*((?P<DZ>float)|\\w*)\\s*[,]\\s*((?P<AI>float)|\\w*)\\s*[,]\\s*((?P<R>float)\\s*[,]\\s*(?P<G>float)\\s*[,]\\s*(?P<B>float)\\s*)[,]\\s*(?P<AI>float)\\s*[,]\\s*",
+				"white": "(1.0, 1.0, 1.0)"
+			},
+			"wowsetlightstartrgb255":
+			{
+				"description": "SetLight() color format",
+				"regex": ":\\s*(SetLight)\\s*\\(\\s*(\\w*)\\s*[,]\\s*(\\w*)\\s*[,]\\s*((?P<DX>float)|\\w*)\\s*[,]\\s*((?P<DY>float)|\\w*)\\s*[,]\\s*((?P<DZ>float)|\\w*)\\s*[,]\\s*((?P<AI>float)|\\w*)\\s*[,]\\s*((?P<R1>num)\\s*/\\s*(?P<R2>num)\\s*[,]\\s*(?P<G1>num)\\s*/\\s*(?P<G2>num)\\s*[,]\\s*(?P<B1>num)\\s*/\\s*(?P<B2>num)\\s*)[,]\\s*(?P<AI>float)\\s*[,]\\s*",
+				"white": "(255/255, 255/255, 255/255)"
+			}
+		}
+	},
+	"search_colors_in":
+	{
+		"all_content":
+		{
+			"color_highlighters":
+			{
+				"color_scheme":
+				{
+					"enabled": true,
+					"highlight_style": "outlined"
+				},
+				"gutter_icons":
+				{
+					"enabled": false,
+					"icon_style": "circle"
+				},
+				"phantoms":
+				{
+					"enabled": false,
+					"length": 2,
+					"style": "below"
+				}
+			},
+			"enabled": true
+		},
+		"hover":
+		{
+			"color_highlighters":
+			{
+				"color_scheme":
+				{
+					"enabled": false,
+					"highlight_style": "outlined"
+				},
+				"gutter_icons":
+				{
+					"enabled": false,
+					"icon_style": "circle"
+				},
+				"phantoms":
+				{
+					"enabled": false,
+					"length": 2,
+					"style": "right"
+				}
+			},
+			"enabled": false
+		},
+		"selection":
+		{
+			"color_highlighters":
+			{
+				"color_scheme":
+				{
+					"enabled": true,
+					"highlight_style": "filled"
+				},
+				"gutter_icons":
+				{
+					"enabled": false,
+					"icon_style": "circle"
+				},
+				"phantoms":
+				{
+					"enabled": false,
+					"length": 2,
+					"style": "right"
+				}
+			},
+			"enabled": true
+		}
+	}
+}
