@@ -53,25 +53,37 @@
 			"wowgradientstartrgb":
 			{
 				"description": "SetGradient(\"orientation\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
-				"regex": ":\\s*(SetGradient)\\s*\\((\\s*((\")?\\w*(\")?)\\s*[,]\\s*(?P<R>float)\\s*[,]\\s*(?P<G>float)\\s*[,]\\s*(?P<B>float)\\s*[,])",
+				"regex": ":\\s*(SetGradient)\\s*\\((\\s*(([\"\\'])?[\\w]*([\"\\'])?)\\s*[,]\\s*(?P<R>float)\\s*[,]\\s*(?P<G>float)\\s*[,]\\s*(?P<B>float)\\s*[,])",
 				"white": "(1.0, 1.0, 1.0)"
 			},
 			"wowgradientstartrgb255":
 			{
 				"description": "SetGradient(\"orientation\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
-				"regex": ":\\s*(SetGradient)\\s*\\((\\s*((\")?\\w*(\")?)\\s*[,]\\s*(?P<R1>num)\\s*/\\s*(?P<R2>num)\\s*[,]\\s*(?P<G1>num)\\s*/\\s*(?P<G2>num)\\s*[,]\\s*(?P<B1>num)\\s*/\\s*(?P<B2>num)\\s*[,])",
+				"regex": ":\\s*(SetGradient)\\s*\\((\\s*(([\"\\'])?[\\w]*([\"\\'])?)\\s*[,]\\s*(?P<R1>num)\\s*/\\s*(?P<R2>num)\\s*[,]\\s*(?P<G1>num)\\s*/\\s*(?P<G2>num)\\s*[,]\\s*(?P<B1>num)\\s*/\\s*(?P<B2>num)\\s*[,])",
 				"white": "(255/255, 255/255, 255/255)"
 			},
 			"wowgradientstartrgba":
 			{
 				"description": "SetGradientAlpha(\"orientation\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
-				"regex": ":\\s*(SetGradientAlpha)\\s*\\((\\s*((\")?\\w*(\")?)\\s*[,]\\s*(?P<R>float)\\s*[,]\\s*(?P<G>float)\\s*[,]\\s*(?P<B>float)\\s*[,]\\s*(?P<A>float)\\s*[,])",
+				"regex": ":\\s*(SetGradientAlpha)\\s*\\((\\s*(([\"\\'])?[\\w]*([\"\\'])?)\\s*[,]\\s*(?P<R>float)\\s*[,]\\s*(?P<G>float)\\s*[,]\\s*(?P<B>float)\\s*[,]\\s*(?P<A>float)\\s*[,])",
 				"white": "(1.0, 1.0, 1.0)"
 			},
 			"wowgradientstartrgba255":
 			{
 				"description": "SetGradientAlpha(\"orientation\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
-				"regex": ":\\s*(SetGradientAlpha)\\s*\\((\\s*((\")?\\w*(\")?)\\s*[,]\\s*(?P<R1>num)\\s*/\\s*(?P<R2>num)\\s*[,]\\s*(?P<G1>num)\\s*/\\s*(?P<G2>num)\\s*[,]\\s*(?P<B1>num)\\s*/\\s*(?P<B2>num)\\s*[,]\\s*(?P<A>float)\\s*[,])",
+				"regex": ":\\s*(SetGradientAlpha)\\s*\\((\\s*(([\"\\'])?[\\w]*([\"\\'])?)\\s*[,]\\s*(?P<R1>num)\\s*/\\s*(?P<R2>num)\\s*[,]\\s*(?P<G1>num)\\s*/\\s*(?P<G2>num)\\s*[,]\\s*(?P<B1>num)\\s*/\\s*(?P<B2>num)\\s*[,]\\s*(?P<A>float)\\s*[,])",
+				"white": "(255/255, 255/255, 255/255)"
+			},
+			"wowchatcolorrgb":
+			{
+				"description": "ChangeChatColor(\"channel\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": "(ChangeChatColor)\\s*\\((\\s*(([\"\\'])?[\\w]*([\"\\'])?)\\s*[,]\\s*(?P<R>float)\\s*[,]\\s*(?P<G>float)\\s*[,]\\s*(?P<B>float)\\s*)\\)",
+				"white": "(1.0, 1.0, 1.0)"
+			},
+			"wowchatcolorrgb255":
+			{
+				"description": "ChangeChatColor(\"channel\", 0.0-1.0, 0.0-1.0, 0.0-1.0) color format",
+				"regex": "(ChangeChatColor)\\s*\\((\\s*(([\"\\'])?[\\w]*([\"\\'])?)\\s*[,]\\s*(?P<R1>num)\\s*/\\s*(?P<R2>num)\\s*[,]\\s*(?P<G1>num)\\s*/\\s*(?P<G2>num)\\s*[,]\\s*(?P<B1>num)\\s*/\\s*(?P<B2>num)\\s*)\\)",
 				"white": "(255/255, 255/255, 255/255)"
 			},
 			"wowhsv":
@@ -168,7 +180,7 @@
 				{
 					"enabled": false,
 					"length": 2,
-					"style": "below"
+					"style": "right"
 				}
 			},
 			"enabled": true
